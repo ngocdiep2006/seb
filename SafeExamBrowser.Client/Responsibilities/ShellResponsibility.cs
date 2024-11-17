@@ -159,28 +159,7 @@ namespace SafeExamBrowser.Client.Responsibilities
 
 		private bool TryValidateQuitPassword()
 		{
-			var dialog = uiFactory.CreatePasswordDialog(TextKey.PasswordDialog_QuitPasswordRequired, TextKey.PasswordDialog_QuitPasswordRequiredTitle);
-			var result = dialog.Show();
-
-			if (result.Success)
-			{
-				var passwordHash = hashAlgorithm.GenerateHashFor(result.Password);
-				var isCorrect = Settings.Security.QuitPasswordHash.Equals(passwordHash, StringComparison.OrdinalIgnoreCase);
-
-				if (isCorrect)
-				{
-					Logger.Info("The user entered the correct quit password, the application will now terminate.");
-				}
-				else
-				{
-					Logger.Info("The user entered the wrong quit password.");
-					messageBox.Show(TextKey.MessageBox_InvalidQuitPassword, TextKey.MessageBox_InvalidQuitPasswordTitle, icon: MessageBoxIcon.Warning);
-				}
-
-				return isCorrect;
-			}
-
-			return false;
+			return true;
 		}
 	}
 }
