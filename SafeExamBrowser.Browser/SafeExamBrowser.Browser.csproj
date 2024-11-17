@@ -159,6 +159,7 @@
     <Compile Include="Wrapper\Handlers\RenderProcessMessageHandlerSwitch.cs" />
     <Compile Include="Wrapper\Handlers\RequestHandlerSwitch.cs" />
     <Compile Include="Wrapper\ICefSharpControl.cs" />
+    <Compile Include="Filters\JavascriptInjectionFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SafeExamBrowser.Applications.Contracts\SafeExamBrowser.Applications.Contracts.csproj">

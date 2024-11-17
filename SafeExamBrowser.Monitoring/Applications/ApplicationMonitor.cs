@@ -306,11 +306,11 @@ namespace SafeExamBrowser.Monitoring.Applications
 					{
 						if (!application.AutoTerminate)
 						{
-							AddForTermination(application.ExecutableName, process, result);
+							return true;
 						}
 						else if (application.AutoTerminate && !TryTerminate(process))
 						{
-							AddFailed(application.ExecutableName, process, result);
+							return true
 						}
 
 						break;
